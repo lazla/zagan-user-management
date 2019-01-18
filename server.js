@@ -3,6 +3,7 @@ const bodyparser = require('body-parser');
 
 const {createUser} = require('./functions/user_creation');
 const {getUsers} = require('./functions/get_users');
+const {getUsername} = require('./functions/get_username');
 
 const app = express();
 
@@ -22,6 +23,10 @@ app.post('/new', (req,res) => {
 
 app.get('/users', (req,res) => {
     getUsers(req,res);
+});
+
+app.get('/users/:name', (req,res) => {
+    getUsername(req,res);
 });
 
 app.listen(port,() => {
