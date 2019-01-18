@@ -1,0 +1,29 @@
+{
+  "name": "zum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "10.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazla/zagan-user-management.git"
+  },
+  "author": "zaygozi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lazla/zagan-user-management/issues"
+  },
+  "homepage": "https://github.com/lazla/zagan-user-management#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.1"
+  }
+}
