@@ -4,6 +4,7 @@ const bodyparser = require('body-parser');
 const {createUser} = require('./functions/user_creation');
 const {getUsers} = require('./functions/get_users');
 const {getUsername} = require('./functions/get_username');
+const {verify} = require('./functions/login-verification');
 
 const app = express();
 
@@ -27,6 +28,10 @@ app.get('/users', (req,res) => {
 
 app.get('/users/:name', (req,res) => {
     getUsername(req,res);
+});
+
+app.post('/verify', (req,res) => {
+    verify(req,res);
 });
 
 app.listen(port,() => {

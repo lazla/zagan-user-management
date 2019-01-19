@@ -11,13 +11,15 @@ function encrypt(password,callback) {
 }
 module.exports.encrypt = encrypt;
 
-function decode(password,hash) {
+function decode(password,hash,callback) {
     bcrypt.compare(password,hash,(err,res) => {
         if (!err && res === true) {
-            return true;
+            if(callback)
+                callback(true)
         }
         else {
-            return false;
+            if(callback)
+                callback(false)
         }
     });
 }
