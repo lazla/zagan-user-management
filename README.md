@@ -37,7 +37,7 @@
 ```
 
 ### USER AUTHENTICATION
-#### Send a post request containing username and password entered by the user to https://zagan-user-management.herokuapp.com/verify
+#### Send a post request to https://zagan-user-management.herokuapp.com/verify with the username and password entered by the user
 ```json
 {
 	"username" : "rahul",
