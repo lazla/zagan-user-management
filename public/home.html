@@ -36,19 +36,24 @@
 <script>
     function displayInfo(username) {
         $.getJSON("https://zagan-user-management.herokuapp.com/users/" + username,(data) => {
-            let username = data[0].username;
-            let email = data[0].email;
-            let phone = data[0].phone;
-            $('#r1').text(username);
-            $('#r2').text(email);
-            $('#r3').text(phone);
+            if(data.length === 0) {
+                $('#info').hide();
+                window.alert('User Not Found !');
+            }
+            else {
+                $('#info').show();
+                let username = data[0].username;
+                let email = data[0].email;
+                let phone = data[0].phone;
+                $('#r1').text(username);
+                $('#r2').text(email);
+                $('#r3').text(phone);
+            }
         });
     }
 
     $('#search').click(() => {
         let username = $('#input').val();
-        // window.location.href = "https://zagan-user-management.herokuapp.com/users/" + username;
-        $('#info').show();
         displayInfo(username);
     });
 
