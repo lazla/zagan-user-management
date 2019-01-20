@@ -16,10 +16,39 @@
         <p><input type="text" id="input" class="form-control-lg" placeholder="Enter Username" style="text-align: center"></p>
         <p><button id="search" class="btn btn-success btn-lg">Search</button></p>
     </div>
+    <div align="center">
+        <table width="50%">
+            <tr><th colspan="2">USER INFO</th></tr>
+            <tr>
+                <th>USERNAME</th>
+                <th id="r1">-</th>
+            </tr>
+            <tr>
+                <th>EMAIL</th>
+                <th id="r2">-</th>
+            </tr>
+            <tr>
+                <th>PHONE</th>
+                <th id="r3">-</th>
+            </tr>
+        </table>
+    </div>
 <script>
+    function displayInfo(username) {
+        $.getJSON("https://zagan-user-management.herokuapp.com/users/" + username,(data) => {
+            let username = data[0].username;
+            let email = data[0].email;
+            let phone = data[0].phone;
+            $('#r1').text(username);
+            $('#r2').text(email);
+            $('#r3').text(phone);
+        });
+    }
+
     $('#search').click(() => {
         let username = $('#input').val();
-        window.location.href = "https://zagan-user-management.herokuapp.com/users/" + username;
+        // window.location.href = "https://zagan-user-management.herokuapp.com/users/" + username;
+        displayInfo(username);
     });
 </script>
 </body>
