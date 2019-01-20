@@ -16,20 +16,20 @@
         <p><input type="text" id="input" class="form-control-lg" placeholder="Enter Username" style="text-align: center"></p>
         <p><button id="search" class="btn btn-success btn-lg">Search</button></p>
     </div>
-    <div align="center">
-        <table width="50%">
-            <tr><th colspan="2">USER INFO</th></tr>
+    <div class="jumbotron" align="center" id="info" style="display: none">
+        <table width="50%" class="table-dark">
+            <tr><th align="center" colspan="2">USER INFO</th></tr>
             <tr>
-                <th>USERNAME</th>
-                <th id="r1">-</th>
+                <th align="center">USERNAME</th>
+                <th id="r1" align="center">-</th>
             </tr>
             <tr>
-                <th>EMAIL</th>
-                <th id="r2">-</th>
+                <th align="center">EMAIL</th>
+                <th id="r2" align="center">-</th>
             </tr>
             <tr>
-                <th>PHONE</th>
-                <th id="r3">-</th>
+                <th align="center">PHONE</th>
+                <th id="r3" align="center">-</th>
             </tr>
         </table>
     </div>
@@ -48,8 +48,10 @@
     $('#search').click(() => {
         let username = $('#input').val();
         // window.location.href = "https://zagan-user-management.herokuapp.com/users/" + username;
+        $('#info').show();
         displayInfo(username);
     });
+
 </script>
 </body>
 </html>
