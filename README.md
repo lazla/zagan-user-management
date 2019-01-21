@@ -8,6 +8,7 @@
 * User Registration : https://zagan-user-management.herokuapp.com/new
 * List of all users : https://zagan-user-management.herokuapp.com/users
 * Find user with username : https://zagan-user-management.herokuapp.com/users/{username}
+* Delete user : https://zagan-user-management.herokuapp.com/users/{username}
 * Verify user credentials : https://zagan-user-management.herokuapp.com/verify
 
 ### EXAMPLES
