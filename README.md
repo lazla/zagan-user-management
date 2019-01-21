@@ -21,7 +21,7 @@
   "phone" : 9876543210
  }
 ```
-#### Then post the json data to https://zagan-user-management.herokuapp.com/new
+#### Then POST the json data to https://zagan-user-management.herokuapp.com/new
 #### Thats it. New user has been registered in the system
 
 ### FIND USER
@@ -36,8 +36,20 @@
  }
 ```
 
+### DELETE USER
+#### Send a DELETE request similar to https://zagan-user-management.herokuapp.com/users/name where name is the username
+#### Server will return the deleted user
+```json
+{
+  "username" : "name",
+  "password" : "pass",
+  "email" : "name@mail.com",
+  "phone" : 9876543210
+ }
+```
+
 ### USER AUTHENTICATION
-#### Send a post request to https://zagan-user-management.herokuapp.com/verify with the username and password entered by the user
+#### Send a POST request to https://zagan-user-management.herokuapp.com/verify with the username and password entered by the user
 ```json
 {
 	"username" : "rahul",
