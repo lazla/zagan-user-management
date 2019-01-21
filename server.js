@@ -5,6 +5,7 @@ const {createUser} = require('./functions/user_creation');
 const {getUsers} = require('./functions/get_users');
 const {getUsername} = require('./functions/get_username');
 const {verify} = require('./functions/login-verification');
+const {delUser} = require('./functions/delete_user');
 
 const app = express();
 
@@ -32,6 +33,10 @@ app.get('/users/:name', (req,res) => {
 
 app.post('/verify', (req,res) => {
     verify(req,res);
+});
+
+app.delete('/users/:name', (req,res) => {
+    delUser(req,res);
 });
 
 app.listen(port,() => {
