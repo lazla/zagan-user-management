@@ -10,7 +10,10 @@ const {updateUser} = require('./functions/update_user');
 
 const app = express();
 
+//Env variables
 const port = process.env.PORT || 3000;
+let adminPass = process.env.ADMINPASS;
+module.exports = {adminPass};
 
 app.use(express.static(__dirname + "/public"));
 

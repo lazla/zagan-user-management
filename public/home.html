@@ -47,7 +47,7 @@
         </table>
     </div>
 <script>
-    const {adminPass} = require('../functions/env');
+    const {adminPass} = require('../server');
 
     function displayInfo(username) {
         $.getJSON("https://zagan-user-management.herokuapp.com/users/" + username,(data) => {
