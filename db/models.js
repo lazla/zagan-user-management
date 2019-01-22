@@ -13,6 +13,12 @@ let userSchema = new db.Schema({
         type : String,
         required : true,
         trim : true,
+        min : 6
+    },
+    name : {
+        type : String,
+        required : true,
+        trim : true,
         min : 1
     },
     email : {
@@ -27,6 +33,18 @@ let userSchema = new db.Schema({
         required : true,
         trim : true,
         min : 10
+    },
+    location : {
+        type : String,
+        required : true,
+        trim : true,
+        min : 1
+    },
+    mac : {
+        type : String,
+        required : true,
+        trim : true,
+        min : 1
     }
 });
 
