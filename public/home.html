@@ -14,7 +14,7 @@
         <img src="zum.png" height="25%" width="25%">
         <br><br>
         <p><input type="text" id="input" class="form-control-lg" placeholder="Search User" style="text-align: center">
-        &nbsp;&nbsp;&nbsp; <input type="text" id="pass" class="form-control-lg" placeholder="Admin Password" style="text-align: center"></p>
+        &nbsp;&nbsp;&nbsp; <input type="password" id="pass" class="form-control-lg" placeholder="Admin Password" style="text-align: center"></p>
         <p><button id="search" class="btn btn-success btn-lg">Search</button></p>
     </div>
     <div class="jumbotron" align="center" id="info" style="display: none">
@@ -47,6 +47,8 @@
         </table>
     </div>
 <script>
+    const {adminPass} = require('../functions/env');
+
     function displayInfo(username) {
         $.getJSON("https://zagan-user-management.herokuapp.com/users/" + username,(data) => {
             if(data.length === 0) {
@@ -74,7 +76,7 @@
 
     $('#search').click(() => {
         let username = $('#input').val();
-        if($('#pass').val() === process.env.ADMINPASS) {
+        if($('#pass').val() === adminPass) {
             displayInfo(username);
         }
         else {
